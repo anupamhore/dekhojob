@@ -1,0 +1,3 @@
+### Application health (includes database status)
+GET http://localhost:8080/actuator/health
+Accept: application/json

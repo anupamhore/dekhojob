@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: dekhojob
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5436/dekhojob}
+    username: ${DB_USERNAME:anupam}
+    password: ${DB_PASSWORD:anupam}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  endpoint:
+    health:
+      show-details: always
