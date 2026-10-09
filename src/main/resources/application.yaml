@@ -4,8 +4,8 @@ spring:
 
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:5436/dekhojob}
-    username: ${DB_USERNAME:anupam}
-    password: ${DB_PASSWORD:anupam}
+    username: ${DB_USERNAME:dekhojob}
+    password: ${DB_PASSWORD:dekhojob_dev_pw}
 
   jpa:
     hibernate:
