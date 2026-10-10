@@ -1,0 +1,51 @@
+@baseUrl = http://localhost:8080/api/v1
+
+### 1. Register a User (expect 201 + Location header)
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "email": "anupam.hore@yahoo.com",
+  "password": "Anupam@1234",
+  "firstName": "Anupam",
+  "lastName": "Hore"
+}
+
+> {% client.global.set("userId", response.body.id); %}
+
+### 2. Get the user you just created (expect 200)
+GET {{baseUrl}}/users/{{userId}}
+
+
+### 3. Same email, different case (expect 409)
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "email": "Anupam.Hore@yahoo.com",
+  "password": "Test@1234",
+  "firstName": "Anupam",
+  "lastName": "Hore"
+}
+
+### 4. Invalid fields (expect 400 with pre-field errors)
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "email": "not-an-email",
+  "password": "short",
+  "firstName": "  ",
+  "lastName": ""
+}
+
+### 5. Malformed JSON (expect 400)
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "email": "sangitadeb74@gmail.com"
+}
+
+### 6. Unknown User (expect 404)
+GET {{baseUrl}}/users/99999999
