@@ -5,3 +5,27 @@ databaseChangeLog:
   - include:
       file: changes/0002-create-users-table.sql
       relativeToChangelogFile: true
+  - include:
+      file: changes/0003-create-locations-tables.sql
+      relativeToChangelogFile: true
+  - include:
+      file: changes/0004-seed-locations.sql
+      relativeToChangelogFile: true
+  - include:
+      file: changes/0005-create-organizations-table.sql
+      relativeToChangelogFile: true
+  - include:
+      file: changes/0006-create-organization-admins-table.sql
+      relativeToChangelogFile: true
+  - include:
+      file: changes/0007-create-profiles-table.sql
+      relativeToChangelogFile: true
+  - include:
+      file: changes/0008-create-experiences-table.sql
+      relativeToChangelogFile: true
+  - include:
+      file: changes/0009-create-educations-table.sql
+      relativeToChangelogFile: true
+  - include:
+      file: changes/0010-create-skills-table.sql
+      relativeToChangelogFile: true

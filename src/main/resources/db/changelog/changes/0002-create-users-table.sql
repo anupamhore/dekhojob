@@ -1,4 +1,4 @@
---liquibase formatted sql
+--liquibase formatted SQL
 
 --changeset anupam:0002-create-users-table
 CREATE TABLE users (

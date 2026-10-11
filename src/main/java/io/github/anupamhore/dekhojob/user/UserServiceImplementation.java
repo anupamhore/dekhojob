@@ -13,7 +13,7 @@ import java.util.Locale;
 
 @Service
 @RequiredArgsConstructor
-public class UserServiceImplementation implements UserService {
+class UserServiceImplementation implements UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
