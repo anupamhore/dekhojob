@@ -1,0 +1,51 @@
+@baseUrl = http://localhost:8080/api/v1
+
+### Alice
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{ "email": "alice@example.com",
+  "password": "supersecret123",
+  "firstName": "Alice",
+  "lastName": "Tan"
+}
+
+### Bob
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{ "email": "bob@example.com",
+  "password": "supersecret123",
+  "firstName": "Bob",
+  "lastName": "Lee"
+}
+
+### Chen
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{ "email": "chen@example.com",
+  "password": "supersecret123",
+  "firstName": "Chen",
+  "lastName": "Wei"
+}
+
+### Dina
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{ "email": "dina@example.com",
+  "password": "supersecret123",
+  "firstName": "Dina",
+  "lastName": "Kumar"
+}
+
+### Eve
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{ "email": "eve@example.com",
+  "password": "supersecret123",
+  "firstName": "Eve",
+  "lastName": "Ong"
+}

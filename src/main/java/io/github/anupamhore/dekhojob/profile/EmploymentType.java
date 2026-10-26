@@ -1,0 +1,12 @@
+package io.github.anupamhore.dekhojob.profile;
+
+public enum EmploymentType {
+    FULL_TIME,
+    PART_TIME,
+    SELF_EMPLOYED,
+    FREELANCE,
+    CONTRACT,
+    INTERNSHIP,
+    APPRENTICESHIP,
+    SEASONAL
+}
