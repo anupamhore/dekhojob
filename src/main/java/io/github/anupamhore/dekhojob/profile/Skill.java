@@ -26,6 +26,10 @@ public class Skill {
     @Column(nullable = false, updatable = false)
     private Instant createdAt;
 
+    public Skill(String name) {
+        this.name = name;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
