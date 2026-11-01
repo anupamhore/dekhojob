@@ -5,6 +5,7 @@ import io.github.anupamhore.dekhojob.user.customexception.UserNotFoundException;
 import io.github.anupamhore.dekhojob.user.dto.RegisterUserRequest;
 import io.github.anupamhore.dekhojob.user.dto.UserResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +18,7 @@ class UserServiceImplementation implements UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final ApplicationEventPublisher applicationEventPublisher;
 
     @Override
     @Transactional
@@ -37,7 +39,13 @@ class UserServiceImplementation implements UserService {
                 request.lastName().trim()
         );
 
-        return UserResponse.from(userRepository.save(user));
+        User saved = userRepository.save(user);
+        applicationEventPublisher.publishEvent(
+                new UserRegisteredEvent(saved.getId(),
+                        saved.getFirstName(),
+                        saved.getLastName()));
+
+        return UserResponse.from(saved);
 
     }
 

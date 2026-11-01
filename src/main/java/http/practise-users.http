@@ -49,3 +49,25 @@ Content-Type: application/json
   "firstName": "Eve",
   "lastName": "Ong"
 }
+
+### Frank
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "email": "frank@example.com",
+  "password": "supersecret123",
+  "firstName": "Frank",
+  "lastName": "Ng"
+}
+
+### Same name, different person: slug must get a suffix
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "email": "frank.two@example.com",
+  "password": "supersecret123",
+  "firstName": "Frank",
+  "lastName": "Ng"
+}

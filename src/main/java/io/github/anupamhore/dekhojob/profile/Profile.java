@@ -17,6 +17,10 @@ import java.util.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Profile {
 
+
+    @Version
+    private Long version;
+
     @Id
     private Long userId;
 

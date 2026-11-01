@@ -10,4 +10,6 @@ public interface ProfileRepository extends JpaRepository<Profile, Long> {
 
     @Query("select p from Profile p left join fetch p.experiences")
     List<Profile> findAllWithExperiences();
+
+    boolean existsBySlug(String slug);
 }
